@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+body {
+    background-image: url(../img/depositphoto-16.jpg);
+}
+main div, section {
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    div #ir-arriba{
+        border: outset #6b705c 0.5px;
+    }
+}
+.txtnormal {
+    font-family: 'Ysabeau Infant', sans-serif;
+}
+.titulo {
+    font-family: 'Alumni Sans', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.btnAgregar {
+    font-size: large;
+    font-weight: bold;
+    padding: 4px;
+    margin-top: 20px;
+    border-radius: 5%;
+}
+.card {
+    width: 18rem;
+    margin: 20px;
+    background-color: rgba(146, 137, 124, 0.2);
+}
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+.flex-row {
+    flex-wrap: wrap;
+}
+
+/* footer */
+footer{
+    color: #414438;
+}
+.footer-centro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.arriba-red{
+    border-radius: 10%;
+    position: relative;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.no-bullet{
+    list-style: none;
+}
+.socalo-peque{
+    font-size: medium;
+}
+.derechos {
+    text-align: center;
+    font-size: small;
+}
+.titulo-footer {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size:xx-large;
+}
+
+/* gift card*/
+
+.gift-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2%;
+    align-items: center;
+}
+.img-bordered{
+    border-radius: 3%;
+}
+.gift-comprar {
+    border-radius: 5%;
+    padding: 4px;
+    margin: 20px;
+}
+.gift-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* envíos */
+
+.lista-envio {
+    max-width: 80%; /* Puedes ajustar el valor según tus preferencias */
+    margin: 0 auto; /* Centra el contenedor en la página */
+  }
+
+/* contacto */
+
+.contacto-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-horario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

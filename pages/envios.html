@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100;200;300;400&family=Ysabeau+Infant:wght@200;300&display=swap" rel="stylesheet">
+        <!-- Bootstraap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Tu Jardín Interior</title>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid txtnormal">
+                <div>
+                    <img id="ir-arriba" src="../img/logojardininterior.JPG" alt="logo tu jardin interior" width="20%">
+                </div>
+                    <nav class="navbar navbar-expand-lg">
+                    <div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../pages/giftcard.html">Gift Card</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../pages/envios.html">Envíos</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <img src="../img/banner-jardininterior1.png" width="100%">
+        </header>
+        <main>
+            <div>
+                <h1 class="titulo">CALCULÁ TU <strong>ENVÍO</strong></h1>
+                <div>
+                    <h5 class="txtnormal">Hacemos envíos a todo CABA y Gran Buenos Aires.</h5>
+                    <h5 class="txtnormal">Entregamos con transporte propio dentro de los 3 días porteriores a realizada la compra.</h5>
+                    <h5 class="txtnormal">Seleccioná tu zona y conocé el costo de envío.</h5>
+                </div>
+            </div>
+            <div class="lista-envio" max-width="80%">
+                <select id="zonasEnvio" class="form-select" size="7" aria-label="size 3 select example">
+                    <option selected>Selecciona tu zona de entrega</option>
+                    <option value="zona2">Almirante Brown</option>
+                    <option value="zona1">Avellaneda</option>
+                    <option value="zona3">Berazategui</option>
+                    <option value="zona0">Ciudad Autónoma de Buenos Aires</option>
+                    <option value="zona3">Escobar</option>
+                    <option value="zona2">Esteban Echeverría</option>
+                    <option value="zona3">Ezeiza</option>
+                    <option value="zona3">Florencia Varela</option>
+                    <option value="zona1">Gral. San Martín</option>
+                    <option value="zona2">Hurlingham</option>
+                    <option value="zona2">Ituzaingó</option>
+                    <option value="zona2">José C. Paz</option>
+                    <option value="zona2">La Matanza</option>
+                    <option value="zona1">Lanús</option>
+                    <option value="zona1">Lomas de Zamora</option>
+                    <option value="zona2">Malvinas Argentinas</option>
+                    <option value="zona3">Merlo</option>
+                    <option value="zona3">Moreno</option>
+                    <option value="zona2">Morón</option>
+                    <option value="zona3">Pilar</option>
+                    <option value="zona3">Pte. Perón</option>
+                    <option value="zona2">Quilmes</option>
+                    <option value="zona1">San Fernando</option>
+                    <option value="zona1">San Isidro</option>
+                    <option value="zona2">San Miguel</option>
+                    <option value="zona2">Tigre</option>
+                    <option value="zona1">Tres de Febrero</option>
+                    <option value="zona1">Vicente López</option>
+                </select>
+            </div>
+            <div id="divEnvios">
+                <!-- Acá van a mostrarse los costos de envío por zona seleccionada -->
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <div class="footer-centro">
+                <div>
+                    <p class="titulo-footer">CONTACTO</p>
+                    <p class="txtnormal">Tel. +5411-2030-4050</p>
+                    <p class="txtnormal">info@tuespaciointerior.com</p>
+                    <p class="txtnormal">Av. Corrientes 5473, CABA</p>
+                </div>
+                <div>
+                    <img src="../img/logojardininterior.JPG" alt="logo de renatta" class="img-footer" width="200px">
+                </div>
+                <div>
+                    <p class="titulo-footer">HORARIO DE ATENCIÓN</p>
+                    <p class="txtnormal">Lunes a Viernes de 10 a 19hs.</p>
+                    <p class="txtnormal">Sábados de 10 a 16hs.</p>
+                    <p class="txtnormal">Domingos y Feriados CERRADO.</p>
+                </div>
+            </div>
+            <div>
+                <a href="#ir-arriba"><img src="../img/irarriba1.png" alt="flecha ir arriba" width="35px" class="arriba-red"></a>
+            </div>
+            <div class="derechos txtnormal">
+                <p>Desarrollado por Jenisse Reidel. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="../app.js"></script>
+    </body>
+</html>

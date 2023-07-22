@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100;200;300;400&family=Ysabeau+Infant:wght@200;300&display=swap" rel="stylesheet">
+        <!-- Bootstraap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Tu Jardín Interior</title>
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid txtnormal">
+                <div>
+                    <img id="ir-arriba" src="../img/logojardininterior.JPG" alt="logo tu jardin interior" width="20%">
+                </div>
+                <nav class="navbar navbar-expand-lg">
+                    <div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../pages/giftcard.html">Gift Card</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../pages/envios.html">Envíos</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <img src="../img/banner-jardininterior1.png" width="100%">
+        </header>
+        <main>
+            <div>
+                <h1 class="titulo">PARA QUE ELIJAN SU <strong>REGALO</strong></h1>
+                <div>
+                    <h5 class="txtnormal">Nuestras <strong>Girf Cards</strong> se envían por correo electrónico a la persona que se la quieras regalar y se canjean en nuestro sitio web.</h5>
+                </div>
+            </div>
+            <hr>
+            <div class="gift-flex">
+                <div class="gift-column">
+                    <img class="img-bordered" src="../img/gift-5000.png" alt="gift card de $5.000.-" width="60%">
+                    <button id="btnAgregar" class="gift-comprar txtnormal">Comprar</button>
+                </div>
+                <div class="gift-column">
+                    <img class="img-bordered" src="../img/gift-10000.png" alt="gift card de $10.000.-" width="60%">
+                    <button id="btnAgregar" class="gift-comprar txtnormal">Comprar</button>
+                </div>
+            </div>
+            <div class="gift-flex">
+                <div class="gift-column">
+                    <img class="img-bordered" src="../img/gift-15000.png" alt="gift card de $15.000.-" width="60%">
+                    <button id="btnAgregar" class="gift-comprar txtnormal">Comprar</button>
+                </div>
+                <div class="gift-column">
+                    <img class="img-bordered" src="../img/gift-20000.png" alt="gift card de $20.000.-" width="60%">
+                    <button id="btnAgregar" class="gift-comprar txtnormal">Comprar</button>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h2 class="titulo">CANJEÁ TU <strong>REGALO</strong></h2>
+            </div>
+            <div class="input-gc">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Ingresá el código de tu <strong>Gift Card</strong></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Asegurate de ingresar el código tal cual lo recibiste (mayúsculas y minúsculas).</div>
+                        </div>
+                    <button type="submit" class="btn btn-secondary">Aceptar</button>
+                </form>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <div class="footer-centro">
+                <div>
+                    <p class="titulo-footer">CONTACTO</p>
+                    <p class="txtnormal">Tel. +5411-2030-4050</p>
+                    <p class="txtnormal">info@tujardininterior.com</p>
+                    <p class="txtnormal">Av. Corrientes 5473, CABA</p>
+                </div>
+                <div>
+                    <img src="../img/logojardininterior.JPG" alt="logo de renatta" class="img-footer" width="200px">
+                </div>
+                <div>
+                    <p class="titulo-footer">HORARIO DE ATENCIÓN</p>
+                    <p class="txtnormal">Lunes a Viernes de 10 a 19hs.</p>
+                    <p class="txtnormal">Sábados de 10 a 16hs.</p>
+                    <p class="txtnormal">Domingos y Feriados CERRADO.</p>
+                </div>
+            </div>
+            <div>
+                <a href="#ir-arriba"><img src="../img/irarriba1.png" alt="flecha ir arriba" width="35px" class="arriba-red"></a>
+            </div>
+            <div class="derechos txtnormal">
+                <p>Desarrollado por Jenisse Reidel. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <script src="../app.js"></script>
+    </body>
+</html>
