@@ -3,11 +3,10 @@ class BaseDeDatos{
     constructor(){
         this.productos = []; // Array donde guardamos todos los productos en carrito.
         // Cargamos los productos
-        this.agregarRegistro(1, "Dieffenbachia", 5300, "Reduce la cantidad de polvo en el aire y lo purifica. Aumenta la humedad del ambiente. De acuerdo con el Feng Shui, es ideal para lograr los objetivos laborales.", "Plantas", "dieffenbachia.jpg");
-        this.agregarRegistro(2, "Potus", 5000, "Purifica el aire, eliminando ciertas sustancias tóxicas de sus proximidades. Según el Feng Shui, transforma la energía negativa que se acumula en el ambiente.", "Plantas", "potus.JPG");
-        this.agregarRegistro(3, "Sanseviera", 4900, "Se suele utilizar para purificar el aire. También es una planta recomendada por el Feng Shui para atraer buenas energías a la casa.", "Plantas", "sanseviera.JPG");
-        this.agregarRegistro(4, "Piedras", 500, "Una de las tantas ventajas de usarlas es que dan soluciones a problemas como humedad. También permiten separar las hojas verdes del sustrato.", "Accesorios", "piedras.jpg");
-        
+        this.agregarRegistro(5, "Gift Card 5000", 5000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
+        this.agregarRegistro(6, "Gift Card 10000", 10000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift  Card")
+        this.agregarRegistro(7, "Gift Card 15000", 15000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
+        this.agregarRegistro(8, "Gift Card 20000", 20000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
     }
 
     agregarRegistro(id, nombre, precio, descripcion, categoria, imagen = false){
@@ -104,7 +103,7 @@ class Carrito{
 
 // Clase molde para las plantas a la venta
 class Producto{
-    constructor(id, nombre, precio, descripcion, categoria, imagen) {
+    constructor(id, nombre, precio, descripcion, categoria, imagen = false) {
         this.id = id;
         this.nombre = nombre;
         this.precio = parseInt(precio);
@@ -125,53 +124,8 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 
 // FUNCIONES REGULARES
 
-// Muestra en el HTML los productos que tengo en la base de datos 
-function cargarProductos() {
-    const productos = baseDatos.traerRegistros();
-    divProductos.innerHTML = ""; // Limpia el contenido anterior
-  
-    // Crea un contenedor div para las tarjetas, para poder estilar su posicion dentro de él.
-    const contenedorTarjetas = document.createElement('div');
-    contenedorTarjetas.classList.add('d-flex', 'flex-row');
-  
-    for (const producto of productos) {
-      // Crea cada tarjeta de producto
-      const tarjeta = `
-        <div class="card" style="width: 18rem;">
-            <img src="img/${producto.imagen}" class="card-img-top" alt="producto a la venta">
-            <div class="card-body">
-                <h3 class="card-title">${producto.nombre}</h3>
-                <p class="card-text">${producto.descripcion}</p>
-                <h5>Precio $${producto.precio}</h5>
-                <div class="centrar">
-                    <button class="btnAgregar" data-id="${producto.id}">Agregar al Carrito</button>
-                </div>
-            </div>
-        </div>
-      `;
-      // Agrega cada tarjeta al contenedor de tarjetas
-      contenedorTarjetas.innerHTML += tarjeta;
-    }
-  
-    // Agrega el contenedor de tarjetas al contenedor principal
-    divProductos.appendChild(contenedorTarjetas);
-
-    // Botones para agregar los productos al carrito
-    const botonesAgregar = document.querySelectorAll(".btnAgregar");
-    for (const boton of botonesAgregar){
-        boton.addEventListener("click", (event) => {
-            const id = Number(boton.dataset.id);
-            const producto = baseDatos.registroPorId(id);
-            carrito.agregar(producto);
-        });
-    }
-}
-
 // Creo el objeto carrito. Lo ponemos abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
 const carrito = new Carrito();
-
-// Llamamos a la función
-cargarProductos();
 
 // FORMAS DE PAGO
 

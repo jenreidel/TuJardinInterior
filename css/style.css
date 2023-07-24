@@ -26,6 +26,9 @@ main div, section {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.centro {
+    text-align: center;
+}
 .btnAgregar {
     font-size: large;
     font-weight: bold;
@@ -100,13 +103,25 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+.form-small {
+    max-width: 550px;
+    margin: 0 auto;
+}
+.centrar {
+    display: block;
+    margin: 0 auto;
+}
+.divtxt {
+    max-width: 1000px;
+}
 
 /* envíos */
 
 .lista-envio {
-    max-width: 80%; /* Puedes ajustar el valor según tus preferencias */
-    margin: 0 auto; /* Centra el contenedor en la página */
-  }
+    max-width: 80%; 
+    margin: 0 auto; 
+}
+
 
 /* contacto */
 
@@ -120,3 +135,4 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+
