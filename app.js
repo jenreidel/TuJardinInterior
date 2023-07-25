@@ -3,14 +3,30 @@ class BaseDeDatos{
     constructor(){
         this.productos = []; // Array donde guardamos todos los productos en carrito.
         // Cargamos los productos
-        this.agregarRegistro(1, "Dieffenbachia", 5300, "Reduce la cantidad de polvo en el aire y lo purifica. Aumenta la humedad del ambiente. De acuerdo con el Feng Shui, es ideal para lograr los objetivos laborales.", "Plantas", "dieffenbachia.jpg");
-        this.agregarRegistro(2, "Potus", 5000, "Purifica el aire, eliminando ciertas sustancias tóxicas de sus proximidades. Según el Feng Shui, transforma la energía negativa que se acumula en el ambiente.", "Plantas", "potus.JPG");
-        this.agregarRegistro(3, "Sanseviera", 4900, "Se suele utilizar para purificar el aire. También es una planta recomendada por el Feng Shui para atraer buenas energías a la casa.", "Plantas", "sanseviera.JPG");
-        this.agregarRegistro(4, "Piedras", 500, "Una de las tantas ventajas de usarlas es que dan soluciones a problemas como humedad. También permiten separar las hojas verdes del sustrato.", "Accesorios", "piedras.jpg");
+        this.agregarRegistro(1, "Aloe Vera", 2500, "Uno de sus principales beneficios es su capacidad para limpiar el aire de toxinas. Las sustancias nocivas que pueda haber en el ambiente, como por ejemplo el benceno, son absorbidas por este tipo de plantas." , "Planta", "aloevera.jpg");
+        this.agregarRegistro(2, "Aspidistra", 2300, "Perfecta para personas que dicen tener mala mano con las plantas, ya que es considerada una planta todoterreno resistente al frío y al calor. Además, es pet friendly, no es toxica ni en gatos ni en perros.", "Planta", "aspidistra.jpg");
+        this.agregarRegistro(3, "Calathea", 3900, "Podemos ubicarlas en el salón hacia el este (zona de la salud y la familia), ya que contribuyen a armonizar espacios, relaciones y a estabilizar las emociones. Son plantas resistentes que transmiten energía Yang, perfecta para este espacio de la casa.", "Plantas", "calathea.jpeg");
+        this.agregarRegistro(4, "Ceropegia Woodii", );
+        this.agregarRegistro(5, "Croton", );
+        this.agregarRegistro(6, "Dieffenbachia", 5300, "Reduce la cantidad de polvo en el aire y lo purifica. Aumenta la humedad del ambiente. De acuerdo con el Feng Shui, es ideal para lograr los objetivos laborales.", "Plantas", "dieffenbachia.jpg");
+        this.agregarRegistro(7, "Espatifilo", 2800, "También conocido como Lirio de la Paz o Cuna de Moisés, es una planta de hojas verdes y flores blancas muy llamativas que procede de Sudamérica. Es resistente y con pocos cuidados prospera en el interior de un hogar sin problemas.", "Planta", "espatifilo.jpg");
+        this.agregarRegistro(8, "Ficus Lyrata", );
+        this.agregarRegistro(9, "Kalanchoe", );
+        this.agregarRegistro(10, "Lazo de Amor", );
+        this.agregarRegistro(11, "Maranta Leuconera", );
+        this.agregarRegistro(12, "Pachira Acuática", );
+        this.agregarRegistro(13, "Paperomia", );
+        this.agregarRegistro(14, "Planta de Jade", );
+        this.agregarRegistro(15, "Potus", 5000, "Purifica el aire, eliminando ciertas sustancias tóxicas de sus proximidades. Según el Feng Shui, transforma la energía negativa que se acumula en el ambiente.", "Plantas", "potus.JPG");
+        this.agregarRegistro(16, "Sanseviera", 4900, "Se suele utilizar para purificar el aire. También es una planta recomendada por el Feng Shui para atraer buenas energías a la casa.", "Plantas", "sanseviera.JPG");
+        this.agregarRegistro(17, "Trebol Morado", );
+        this.agregarRegistro(18, "Tronco de Brasil", );
+        this.agregarRegistro(19, "Zamioculcas", );
+        this.agregarRegistro(20, "Piedras", 500, "Una de las tantas ventajas de usarlas es que dan soluciones a problemas como humedad. También permiten separar las hojas verdes del sustrato.", "Accesorios", "piedras.jpg");
         
     }
 
-    agregarRegistro(id, nombre, precio, descripcion, categoria, imagen = false){
+    agregarRegistro(id, nombre, precio, descripcion, categoria, imagen){
         const producto = new Producto(id, nombre, precio, descripcion, categoria, imagen);
         this.productos.push(producto);
     }
@@ -44,7 +60,7 @@ class Carrito{
         let productoEnCarrito = this.estaEnCarrito(producto);
         if (productoEnCarrito) {
             // Si encuentra uno igual, que me sume la cantidad
-            productoEnCarrito.cantidad += 1;
+            productoEnCarrito.cantidad++;
         } else {
             // Agregalo al carrito
             this.carrito.push({...producto, cantidad: 1});
@@ -104,7 +120,7 @@ class Carrito{
 
 // Clase molde para las plantas a la venta
 class Producto{
-    constructor(id, nombre, precio, descripcion, categoria, imagen) {
+    constructor(id, nombre, precio, descripcion, categoria, imagen = false) {
         this.id = id;
         this.nombre = nombre;
         this.precio = parseInt(precio);
@@ -125,7 +141,7 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 
 // FUNCIONES REGULARES
 
-// Muestra en el HTML los productos que tengo en la base de datos 
+// Muestra en el HTML los registros que tengo en la base de datos 
 function cargarProductos() {
     const productos = baseDatos.traerRegistros();
     divProductos.innerHTML = ""; // Limpia el contenido anterior
@@ -160,7 +176,7 @@ function cargarProductos() {
     const botonesAgregar = document.querySelectorAll(".btnAgregar");
     for (const boton of botonesAgregar){
         boton.addEventListener("click", (event) => {
-            const id = Number(boton.dataset.id);
+            const id = Number(boton.dataset.id); // lo convierto en numero xq dataset trae string sino
             const producto = baseDatos.registroPorId(id);
             carrito.agregar(producto);
         });
