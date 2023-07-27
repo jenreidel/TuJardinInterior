@@ -12,11 +12,16 @@ main div, section {
 }
 .container-fluid{
     display: flex;
-    flex-direction: row;
-    div #ir-arriba{
-        border: outset #6b705c 0.5px;
-    }
+    flex-direction: row;    
 }
+.nav-item {
+    font-size: larger;
+    padding: 4px;
+    margin: 3px;
+}
+.nav-link:hover {
+    text-decoration: underline;
+  }
 .txtnormal {
     font-family: 'Ysabeau Infant', sans-serif;
 }
