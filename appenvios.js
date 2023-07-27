@@ -2,9 +2,7 @@ const divEnvios = document.querySelector("#divEnvios");
 const selectElement = document.querySelector("#zonasEnvio");
 
 selectElement.addEventListener("change", (e) => {e.preventDefault();
-    console.log("Evento change activado!");
     const zonaSeleccionada = selectElement.value;
-    console.log("Zona seleccionada:", zonaSeleccionada);
     switch (zonaSeleccionada) {
         case "zona0":
             divEnvios.innerHTML = `

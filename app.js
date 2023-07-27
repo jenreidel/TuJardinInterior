@@ -191,14 +191,30 @@ const carrito = new Carrito();
 cargarProductos();
 
 // FORMAS DE PAGO
+const btnComprar = document.querySelector("#btnComprar");
+const divOpcionDePago = document.querySelector("#divOpcionDePago");
+const formaPago = document.querySelector("#formaPago");
+
+btnComprar.addEventListener("click", FormaDePago);
 
 function FormaDePago() {
-    let formaPago = prompt("Ingresa la forma de pago:\n\nVISA (3 cuotas sin interés)\nMASTER (3 cuotas con 5% de recargo)\nAMEX (3 cuotas con 10% de recargo)");
+    divFormaDePago.innerHTML = `
+    <select id="formaPago" class="form-select" size="7" aria-label="size 3 select example">
+        <option selected>Selecciona la forma de pago</option>
+        <option value="VISA1">VISA en 1 pago</option>
+        <option value="VISA3">VISA en 3 pagos sin interés</option>
+        <option value="MASTER1">MASTERCARD en 1 pago</option>
+        <option value="MASTER3">MASTERCARD en 3 pagos sin interés</option>
+        <option value="AMEX1">AMERICAN EXPRESS en 1 pago</option>
+        <option value="AMEX3">AMERICAN EXPRESS en 3 pagos sin interés</option>
+    </select>
+    `;
+    let formaPago = formaPago.value;
     switch (formaPago) {
         case "VISA1": 
             let cuotaV1 = Math.round(precio / 3);
             let precioFinalV1 = cuotaV1 * 3;
-            alert(`Total: ${precioFinalV1} (3 cuotas sin interés de $${cuotaV1})`);
+            alert(`Total: ${precioFinalV1} (1 cuota única de $${cuotaV1})`);
             break;
         case "VISA3": 
             let cuotaV3 = Math.round(precio / 3);
@@ -208,7 +224,7 @@ function FormaDePago() {
         case "MASTER1": 
             let cuotaM1 = Math.round((precio / 3) * 1.05);
             let precioFinalM1 = cuotaM1 * 3;
-            alert(`Total: ${precioFinalM1} (3 cuotas sin interés de $${cuotaM1})`);
+            alert(`Total: ${precioFinalM1} (1 cuota única de $${cuotaM1})`);
             break;
         case "MASTER3": 
             let cuotaM3 = Math.round((precio / 3) * 1.05);
@@ -218,15 +234,13 @@ function FormaDePago() {
         case "AMEX3": 
             let cuotaA1 = Math.round((precio / 3) * 1.1);
             let precioFinalA1 = cuotaA1 * 3;
-            alert(`Total: ${precioFinalA1} (3 cuotas sin interés de $${cuotaA1})`);
+            alert(`Total: ${precioFinalA1} (1 cuota única de $${cuotaA1})`);
             break;
         case "AMEX3": 
             let cuotaA3 = Math.round((precio / 3) * 1.1);
             let precioFinalA3 = cuotaA3 * 3;
             alert(`Total: ${precioFinalA3} (3 cuotas sin interés de $${cuotaA3})`);
             break;
-        default:
-            alert("Por favor ingresá un forma de pago.");
-            break;
     }
 } 
+
