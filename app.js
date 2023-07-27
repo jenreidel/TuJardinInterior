@@ -198,7 +198,7 @@ const formaPago = document.querySelector("#formaPago");
 btnComprar.addEventListener("click", FormaDePago);
 
 function FormaDePago() {
-    divFormaDePago.innerHTML = `
+    divOpcionDePago.innerHTML = `
     <select id="formaPago" class="form-select" size="7" aria-label="size 3 select example">
         <option selected>Selecciona la forma de pago</option>
         <option value="VISA1">VISA en 1 pago</option>
