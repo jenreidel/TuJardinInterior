@@ -53,6 +53,9 @@ main div, section {
 .flex-row {
     flex-wrap: wrap;
 }
+.hidden {
+    display: none;
+}
 
 /* footer */
 footer{
