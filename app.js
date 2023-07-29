@@ -197,7 +197,7 @@ const formaPago = document.querySelector("#formaPago");
 
 // Le digo que si hay algo en el carrito, el boton funcione, sino no.
 //if () {
-    btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('hidden'));
+    btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('ocultar'));
 
 
 // Hago un
