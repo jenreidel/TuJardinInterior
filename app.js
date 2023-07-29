@@ -198,7 +198,7 @@ const formaPago = document.querySelector("#formaPago");
 // Le digo que si hay algo en el carrito, el boton funcione, sino no.
 //if () {
     btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('hidden'));
-}
+
 
 // Hago un
 formaPago.addEventListener("change", (event) => {
@@ -208,12 +208,16 @@ formaPago.addEventListener("change", (event) => {
     switch (formaPago.value) {
         case "VISA1": 
             let precioFinalV1 = Math.round(precio);
-            alert(`Total: $${precioFinalV1}.- en un pago`);
+            divFormaDePago.innerHTML = `
+                <h5>Total: $${precioFinalV1}.- en un pago</h>
+            `;
             break;
         case "VISA3": 
             let cuotaV3 = (precio / 3).toFixed(2);
             let precioFinalV3 = Math.round(precio);
-            alert(`Total: $${precioFinalV3}.- (3 cuotas sin interés de $${cuotaV3})`);
+            divFormaDePago.innerHTML = `
+                <h5>Total: $${precioFinalV3}.- (3 cuotas sin interés de $${cuotaV3})</h5>
+            `;
             break;
         case "MASTER1": 
             let precioFinalM1 = Math.round(precio);
@@ -277,3 +281,27 @@ btnComprar.addEventListener("click", () => {
 // Llamar a la función inicial para verificar el estado del botón al cargar la página
 actualizarEstadoBotonComprar();
 */
+
+
+// SWEETALERT2
+
+// CONFIRMACION DE COMPRA
+// https://sweetalert2.github.io/#examples
+
+// Swal.fire({
+//     title: 'Are you sure?',
+//     text: "You won't be able to revert this!",
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#3085d6',
+//     cancelButtonColor: '#d33',
+//     confirmButtonText: 'Yes, delete it!'
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       Swal.fire(
+//         'Deleted!',
+//         'Your file has been deleted.',
+//         'success'
+//       )
+//     }
+//   })
