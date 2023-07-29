@@ -242,12 +242,8 @@ formaPago.addEventListener("change", (event) => {
 
 /*
 
-Para hacer que el botón "Comprar" funcione solo cuando hay elementos en el carrito, puedes deshabilitar el botón cuando el carrito esté vacío y habilitarlo cuando tenga al menos un elemento. Esto se puede lograr con un simple condicional en el evento del botón "Comprar".
+Para hacer que el botón "Comprar" funcione solo cuando hay elementos en el carrito.
 
-Aquí tienes una forma de hacerlo:
-
-javascript
-Copy code
 // Obtener referencias a los elementos relevantes del carrito y el botón "Comprar"
 const btnComprar = document.querySelector("#btnComprar");
 const carritoItems = document.querySelector("#carritoItems");
