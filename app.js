@@ -195,44 +195,85 @@ const btnComprar = document.querySelector("#btnComprar");
 const divOpcionDePago = document.querySelector("#divOpcionDePago");
 const formaPago = document.querySelector("#formaPago");
 
-btnComprar.addEventListener("click", () => divOpcionDePago.classList.toogle('hidden'));
+// Le digo que si hay algo en el carrito, el boton funcione, sino no.
+//if () {
+    btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('hidden'));
+}
 
+// Hago un
 formaPago.addEventListener("change", (event) => {
     event.preventDefault();
 
     let precio = carrito.total;
     switch (formaPago.value) {
         case "VISA1": 
-            let cuotaV1 = Math.round(precio / 3);
-            let precioFinalV1 = cuotaV1 * 3;
-            alert(`Total: ${precioFinalV1} (1 cuota única de $${cuotaV1})`);
+            let precioFinalV1 = Math.round(precio);
+            alert(`Total: $${precioFinalV1}.- en un pago`);
             break;
         case "VISA3": 
-            let cuotaV3 = Math.round(precio / 3);
-            let precioFinalV3 = cuotaV3 * 3;
-            alert(`Total: ${precioFinalV3} (3 cuotas sin interés de $${cuotaV3})`);
+            let cuotaV3 = (precio / 3).toFixed(2);
+            let precioFinalV3 = Math.round(precio);
+            alert(`Total: $${precioFinalV3}.- (3 cuotas sin interés de $${cuotaV3})`);
             break;
         case "MASTER1": 
-            let cuotaM1 = Math.round((precio / 3) * 1.05);
-            let precioFinalM1 = cuotaM1 * 3;
-            alert(`Total: ${precioFinalM1} (1 cuota única de $${cuotaM1})`);
+            let precioFinalM1 = Math.round(precio);
+            alert(`Total: $${precioFinalM1}.- en un pago`);
             break;
         case "MASTER3": 
-            let cuotaM3 = Math.round((precio / 3) * 1.05);
-            let precioFinalM3 = cuotaM3 * 3;
-            alert(`Total: ${precioFinalM3} (3 cuotas sin interés de $${cuotaM3})`);
+            let cuotaM3 = ((precio / 3) * 1.05).toFixed(2);
+            let precioFinalM3 = Math.round(cuotaM3 * 3);
+            alert(`Total: $${precioFinalM3}.- (3 cuotas sin interés de $${cuotaM3})`);
+            break;
+        case "AMEX1": 
+            let precioFinalA1 = Math.round(precio);
+            alert(`Total: $${precioFinalA1}.- en un pago`);
             break;
         case "AMEX3": 
-            let cuotaA1 = Math.round((precio / 3) * 1.1);
-            let precioFinalA1 = cuotaA1 * 3;
-            alert(`Total: ${precioFinalA1} (1 cuota única de $${cuotaA1})`);
-            break;
-        case "AMEX3": 
-            let cuotaA3 = Math.round((precio / 3) * 1.1);
-            let precioFinalA3 = cuotaA3 * 3;
-            alert(`Total: ${precioFinalA3} (3 cuotas sin interés de $${cuotaA3})`);
+            let cuotaA3 = ((precio / 3) * 1.1).toFixed(2);
+            let precioFinalA3 = Math.round(cuotaA3 * 3);
+            alert(`Total: $${precioFinalA3}.- (3 cuotas sin interés de $${cuotaA3})`);
             break;
     }   
 });
 
+/*
 
+Para hacer que el botón "Comprar" funcione solo cuando hay elementos en el carrito, puedes deshabilitar el botón cuando el carrito esté vacío y habilitarlo cuando tenga al menos un elemento. Esto se puede lograr con un simple condicional en el evento del botón "Comprar".
+
+Aquí tienes una forma de hacerlo:
+
+javascript
+Copy code
+// Obtener referencias a los elementos relevantes del carrito y el botón "Comprar"
+const btnComprar = document.querySelector("#btnComprar");
+const carritoItems = document.querySelector("#carritoItems");
+
+// Función para comprobar si el carrito está vacío
+function isCarritoVacio() {
+  return carritoItems.children.length === 0;
+}
+
+// Función para habilitar o deshabilitar el botón "Comprar" según el estado del carrito
+function actualizarEstadoBotonComprar() {
+  btnComprar.disabled = isCarritoVacio();
+}
+
+// Evento para ocultar/mostrar el botón "Comprar" cuando se agregan o eliminan elementos del carrito
+carritoItems.addEventListener("DOMNodeInserted", actualizarEstadoBotonComprar);
+carritoItems.addEventListener("DOMNodeRemoved", actualizarEstadoBotonComprar);
+
+// Evento de clic en el botón "Comprar"
+btnComprar.addEventListener("click", () => {
+  if (isCarritoVacio()) {
+    alert("El carrito está vacío. Agrega algunos productos antes de comprar.");
+  } else {
+    // Aquí colocas la lógica para realizar la compra
+    // Por ejemplo, abrir el formulario de pago, enviar los datos, etc.
+    // ...
+    alert("¡Compra realizada con éxito!");
+  }
+});
+
+// Llamar a la función inicial para verificar el estado del botón al cargar la página
+actualizarEstadoBotonComprar();
+*/
