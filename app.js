@@ -184,7 +184,7 @@ function cargarProductos() {
     }
 }
 
-// Creo el objeto carrito. Lo ponemos abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
+// Creo el objeto carrito. Lo pongo abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
 const carrito = new Carrito();
 
 // Llamamos a la función
@@ -195,10 +195,20 @@ const btnComprar = document.querySelector("#btnComprar");
 const divOpcionDePago = document.querySelector("#divOpcionDePago");
 const formaPago = document.querySelector("#formaPago");
 
-// Le digo que si hay algo en el carrito, el boton funcione, sino no.
-//if () {
-    btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('ocultar'));
+// Función para comprobar si el carrito está vacío
+function carritoVacio() {
+    return carrito.children.length === 0;
+  }
 
+// Le digo que si hay algo en el carrito, el boton funcione, sino no.
+function comprar(){
+    if (carritoVacio()) {
+        Swal.fire('Tu carrito está vacío. Por favor agrega productos para continuar.')
+    } else {
+        btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('ocultar'));
+    }
+}
+comprar();
 
 // Hago un
 formaPago.addEventListener("change", (event) => {
@@ -240,44 +250,6 @@ formaPago.addEventListener("change", (event) => {
     }   
 });
 
-/*
-
-Para hacer que el botón "Comprar" funcione solo cuando hay elementos en el carrito.
-
-// Obtener referencias a los elementos relevantes del carrito y el botón "Comprar"
-const btnComprar = document.querySelector("#btnComprar");
-const carritoItems = document.querySelector("#carritoItems");
-
-// Función para comprobar si el carrito está vacío
-function isCarritoVacio() {
-  return carritoItems.children.length === 0;
-}
-
-// Función para habilitar o deshabilitar el botón "Comprar" según el estado del carrito
-function actualizarEstadoBotonComprar() {
-  btnComprar.disabled = isCarritoVacio();
-}
-
-// Evento para ocultar/mostrar el botón "Comprar" cuando se agregan o eliminan elementos del carrito
-carritoItems.addEventListener("DOMNodeInserted", actualizarEstadoBotonComprar);
-carritoItems.addEventListener("DOMNodeRemoved", actualizarEstadoBotonComprar);
-
-// Evento de clic en el botón "Comprar"
-btnComprar.addEventListener("click", () => {
-  if (isCarritoVacio()) {
-    alert("El carrito está vacío. Agrega algunos productos antes de comprar.");
-  } else {
-    // Aquí colocas la lógica para realizar la compra
-    // Por ejemplo, abrir el formulario de pago, enviar los datos, etc.
-    // ...
-    alert("¡Compra realizada con éxito!");
-  }
-});
-
-// Llamar a la función inicial para verificar el estado del botón al cargar la página
-actualizarEstadoBotonComprar();
-*/
-
 
 // SWEETALERT2
 
@@ -285,18 +257,19 @@ actualizarEstadoBotonComprar();
 // https://sweetalert2.github.io/#examples
 
 // Swal.fire({
-//     title: 'Are you sure?',
-//     text: "You won't be able to revert this!",
+//     title: '¿Confirmas la compra?',
+//     text: "Esta acción no podrá ser revertida.",
 //     icon: 'warning',
 //     showCancelButton: true,
 //     confirmButtonColor: '#3085d6',
 //     cancelButtonColor: '#d33',
-//     confirmButtonText: 'Yes, delete it!'
+//     confirmButtonText: 'Si, comprar!'
+//     cancelButtonText: 'Cancelar'        
 //   }).then((result) => {
 //     if (result.isConfirmed) {
 //       Swal.fire(
-//         'Deleted!',
-//         'Your file has been deleted.',
+//         'Compra realizada!',
+//         'Tu pedido está en camino.',
 //         'success'
 //       )
 //     }
