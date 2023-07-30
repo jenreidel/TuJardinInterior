@@ -101,14 +101,19 @@ class Carrito{
             divCarrito.innerHTML += `
                 <div class="producto">
                     <h2>${producto.nombre}</h2>
-                    <p>$${producto.precio}</p>
+                    <p>$${producto.precio}.-</p>
                     <p>Cantidad: ${producto.cantidad}</p>
-                    <button class="btnQuitar" data-id="${producto.id}">Quitar del Carrito</button>
+                    <button class="btn btn-secondary btnQuitar" type="button" data-id="${producto.id}">Quitar del Carrito</button>
                 </div>
                 `;
             // Actualizo los totales
             this.total += producto.precio * producto.cantidad;
             this.totalProductos += producto.cantidad;
+        }
+
+        // Hago que si tengo productos en el carrito muestre el boton 'comprar', sino no.
+        if (this.totalProductos > 0) {
+
         }
         // Botones de Quitar
         const botonesQuitar = document.querySelectorAll(".btnQuitar");
@@ -120,6 +125,12 @@ class Carrito{
         // Actualizo las variables del carrito.
         spanCantidadProductos.innerText = this.totalProductos;
         spanTotalCarrito.innerText = this.total;
+    }
+
+    vaciar() {
+        this.carrito = [];
+        localStorage.removeItem('carrito');
+        this.listar();
     }
 }
 
@@ -162,7 +173,7 @@ function cargarProductos(productos) {
         <div class="card" style="width: 18rem;">
             <img src="img/${producto.imagen}" class="card-img-top" alt="producto a la venta">
             <div class="card-body">
-                <h3 class="card-title">${producto.nombre}</h3>
+                <h4 class="card-title">${producto.nombre}</h4>
                 <p class="card-text">${producto.descripcion}</p>
                 <h5>Precio $${producto.precio}</h5>
                 <div class="centrar">
@@ -202,9 +213,6 @@ inputBuscar.addEventListener("keyup", (event) => {
     cargarProductos(baseDatos.registroPorNombre(palabra.toLowerCase()));
 })
 
-// Creo el objeto carrito. Lo pongo abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
-const carrito = new Carrito();
-
 // Llamamos a la función
 cargarProductos(baseDatos.traerRegistros());
 
@@ -213,22 +221,12 @@ const btnComprar = document.querySelector("#btnComprar");
 const divOpcionDePago = document.querySelector("#divOpcionDePago");
 const formaPago = document.querySelector("#formaPago");
 
-// Función para comprobar si el carrito está vacío
-function carritoVacio() {
-    return carrito.children.length === 0;
-  }
+// Para que muestre el boton comprar solo si el carrito tiene algo adentro.
+btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('ocultar'));
 
-// Le digo que si hay algo en el carrito, el boton funcione, sino no.
-function comprar(){
-    if (carritoVacio()) {
-        Swal.fire('Tu carrito está vacío. Por favor agrega productos para continuar.')
-    } else {
-        btnComprar.addEventListener("click", () => divOpcionDePago.classList.toggle('ocultar'));
-    }
-}
-comprar();
+// Swal.fire('Tu carrito está vacío. Por favor agrega productos para continuar.')
 
-// Hago un
+// Forma de pago para realizar compra.
 formaPago.addEventListener("change", (event) => {
     event.preventDefault();
 
@@ -268,6 +266,8 @@ formaPago.addEventListener("change", (event) => {
     }   
 });
 
+// Creo el objeto carrito. Lo pongo abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
+const carrito = new Carrito();
 
 // SWEETALERT2
 

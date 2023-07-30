@@ -31,6 +31,20 @@ main div, section {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.titulo2 {
+    font-family: 'Alumni Sans', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.carritoflex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
 .centro {
     text-align: center;
 }
@@ -53,12 +67,18 @@ main div, section {
 .flex-row {
     flex-wrap: wrap;
 }
-.ocultar {
+/* .ocultar {
     display: none;
-}
+} */
 .centrarDiv {
     display: flex;
     justify-content: center;
+}
+.carritoCentrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 #formBuscar {
     width: 400px;

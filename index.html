@@ -65,13 +65,20 @@
                 <!-- Acá van a ir mis productos guardados en la base de datos -->
             </div>
         </main>
-        <section class="txtnormal">
-            <h4>Carrito (<span id="cantidadProductos">0</span>)</h4>
-            <div id="carrito">
-                <!-- Acá vamos a cargar los productos que estén en el carrito -->
+        <section class="txtnormal ocultar carritoCentrar">
+            <hr>
+            <div>
+                <div class="titulo2">
+                    <h2>CARRITO (<span id="cantidadProductos">0</span>)</h2>
+                </div>
+                <div id="carrito" class="carritoflex">
+                    <!-- Acá vamos a cargar los productos que estén en el carrito -->
+                </div>
+                <div>
+                    <h3 class="titulo2">Total: $<span id="totalCarrito">0</span></h3>
+                </div>
+                <button id="btnComprar" type="button" class="btn btn-secondary ocultar">Comprar</button>
             </div>
-            <h3>Total: $<span id="totalCarrito">0</span></h3>
-            <button id="btnComprar" type="button" class="btn btn-secondary">Comprar</button>
             <div id="divOpcionDePago" class="txtnormal ocultar">
                 <select id="formaPago" class="form-select" size="7" aria-label="size 3 select example">
                     <option selected>Selecciona la forma de pago</option>
@@ -85,6 +92,9 @@
             </div>
             <div id="divFormaDePago" class="txtnormal">
                 <!-- Acá va a aparecer la forma de pago seleccionada -->
+            </div>
+            <div>
+                <button id="btnConfirmar" type="button" class="btn btn-secondary ocultar centrarDiv">Confirmar</button>
             </div>
         </section>
         <hr>
