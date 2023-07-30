@@ -43,7 +43,7 @@ main div, section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 .centro {
     text-align: center;
@@ -99,7 +99,10 @@ main div, section {
     max-width: 1000px;
 }
 #divOpcionDePago {
-    margin-top: 15px;
+    margin: 30px auto;
+}
+#btnConfirmar{
+    margin: 0 auto;
 }
 
 /* footer */
@@ -171,7 +174,7 @@ footer{
 /* envíos */
 
 .lista-envio {
-    max-width: 80%; 
+    max-width: 60%; 
     margin: 0 auto; 
 }
 
