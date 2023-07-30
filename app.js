@@ -189,6 +189,7 @@ function cargarProductos(productos) {
     }
 }
 
+// Buscador de productos  
 formBuscar.addEventListener("submit", (event) => {
     event.preventDefault();
     const palabra = inputBuscar.value;
