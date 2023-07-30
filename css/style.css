@@ -78,6 +78,9 @@ main div, section {
 .divtxt {
     max-width: 1000px;
 }
+#divOpcionDePago {
+    margin-top: 15px;
+}
 
 /* footer */
 footer{
