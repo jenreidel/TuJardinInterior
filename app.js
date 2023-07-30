@@ -39,6 +39,10 @@ class BaseDeDatos{
     registroPorId(id){
         return this.productos.find((producto) => producto.id === id);
     }
+
+    registroPorNombre(palabra){
+        return this.productos.filter((producto) => producto.nombre.toLowerCase().includes(palabra));
+    }
 }
 
 // Clase Carrito donde van a estar los productos a comprar
@@ -139,12 +143,13 @@ const divProductos = document.querySelector("#productos");
 const divCarrito = document.querySelector("#carrito");
 const spanCantidadProductos = document.querySelector("#cantidadProductos");
 const spanTotalCarrito = document.querySelector("#totalCarrito");
+const formBuscar = document.querySelector("#formBuscar");
+const inputBuscar = document.querySelector("#inputBuscar");
 
 // FUNCIONES REGULARES
 
 // Muestra en el HTML los registros que tengo en la base de datos 
-function cargarProductos() {
-    const productos = baseDatos.traerRegistros();
+function cargarProductos(productos) {
     divProductos.innerHTML = ""; // Limpia el contenido anterior
   
     // Crea un contenedor div para las tarjetas, para poder estilar su posicion dentro de él.
@@ -184,11 +189,23 @@ function cargarProductos() {
     }
 }
 
+formBuscar.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const palabra = inputBuscar.value;
+    cargarProductos(baseDatos.registroPorNombre(palabra.toLowerCase()));
+});
+
+inputBuscar.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    const palabra = inputBuscar.value;
+    cargarProductos(baseDatos.registroPorNombre(palabra.toLowerCase()));
+})
+
 // Creo el objeto carrito. Lo pongo abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
 const carrito = new Carrito();
 
 // Llamamos a la función
-cargarProductos();
+cargarProductos(baseDatos.traerRegistros());
 
 // FORMAS DE PAGO
 const btnComprar = document.querySelector("#btnComprar");
