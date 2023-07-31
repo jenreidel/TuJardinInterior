@@ -67,9 +67,9 @@ main div, section {
 .flex-row {
     flex-wrap: wrap;
 }
-/* .ocultar {
+.ocultar {
     display: none;
-} */
+}
 .centrarDiv {
     display: flex;
     justify-content: center;
