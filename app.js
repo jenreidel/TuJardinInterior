@@ -1,38 +1,11 @@
-// Simulación de base de datos. 
 class BaseDeDatos{
     constructor(){
-        this.productos = []; // Array donde guardamos todos los productos en carrito.
-        // Cargamos los productos
-        this.agregarRegistro(1, "Aloe Vera", 2500, "Uno de sus principales beneficios es su capacidad para limpiar el aire de toxinas. Absorben las sustancias nocivas que pueda haber en el ambiente, como por ejemplo el benceno." , "Planta", "aloevera.jpg");
-        this.agregarRegistro(2, "Aspidistra", 2300, "Perfecta para personas que dicen tener mala mano con las plantas, ya que es considerada una planta todoterreno resistente al frío y al calor. Además, es pet friendly, no es toxica ni en gatos ni en perros.", "Planta", "aspidistra.jpg");
-        this.agregarRegistro(3, "Calathea", 3900, "Contribuyen a armonizar espacios, relaciones y a estabilizar las emociones. Son plantas resistentes que transmiten energía Yang, perfecta para ubicarla en el living hacia el este (zona de la salud y la familia).", "Plantas", "calathea.jpeg");
-        this.agregarRegistro(4, "Ceropegia Woodii", 1800, "Esta suculenta colgante es llamativa por sus hojas en forma de corazón y flores tubulares. Colócala en un espacio luminoso, pero protegida de los rayos de sol directo. Comproba la humedad del sustrato antes de regarla.", "Planta", "ceropegia-woodii.jpg");
-        this.agregarRegistro(5, "Croton", 3000, "Destaca por sus coloridas hojas y sus multiples propiedades medicinales. Necesita mucha luz pero sin sol directo. Controla que el sustrato esté seco entre riegos y evita encharcar sus raíces.", "Planta", "croton.jpg");
-        this.agregarRegistro(6, "Dieffenbachia", 5300, "Reduce la cantidad de polvo en el aire y lo purifica. Aumenta la humedad del ambiente. De acuerdo con el Feng Shui, es ideal para lograr los objetivos laborales.", "Plantas", "dieffenbachia.jpg");
-        this.agregarRegistro(7, "Espatifilo", 2800, "También llamada Lirio de la Paz o Cuna de Moisés, es una planta de hojas verdes y flores blancas muy llamativas. Resistente y con pocos cuidados prospera en el interior sin problemas.", "Planta", "espatifilo.jpg");
-        this.agregarRegistro(8, "Ficus Lyrata", 9200, "También conocido como Ficus Pandurata, crece poco a poco hasta convertirse en ese árbol de interior con el que siempre soñaste. Sus cuidados son prácticamente son nulos, por lo que son muy resistentes.", "Plantas", "ficus-lyrata.jpg");
-        this.agregarRegistro(9, "Kalanchoe", 1200, "Es una planta muy resistente y difícil de matar. Sus flores pueden ser naranjas, rosas, rojas o amarillas. Regala sólo cuando la tierra esté seca y asegurate que reciba mucha luz natural.", "Planta", "kalanchoe.jpg");
-        this.agregarRegistro(10, "Lazo de Amor", 700, "También conocida como Cinta o Malamadre, necesita luz, pero sin exponerla al sol directo. Es una de las plantas de interior más duraderas y es perfecta para iniciarse en la jardinería.", "Planta", "lazodeamor.jpg");
-        this.agregarRegistro(11, "Maranta Leuconera", 3500, "Conocida también como Planta de la Oración porque por las noches tiende a cerrar sus hojas ligeramente. Necesita mucha luz, pero indirecta para que muestre todos sus vibrantes colores.", "Planta", "maranta-leuconera.jpg");
-        this.agregarRegistro(12, "Pachira Acuática", 5900, "Al contrario que otros árboles, no necesita muchísima luz, así que es una opción perfecta para casas donde el sol no sea muy generoso. Según el Feng Shui, esta planta es ideal para atraer el dinero.", "Planta", "pachira-acuatica.jpg");
-        this.agregarRegistro(13, "Peperomia", 2800, "De alto poder ornamental, llenará tu hogar de su singular verdor. Necesita una exposición indirecta al sol y es bastante sensible al frío. Se recomienda comprobar la humedad del sustrato antes de regarla.", "Planta", "peperomia.jpg");
-        this.agregarRegistro(14, "Planta de Jade", 3600, "Crece lentamente, pero es muy longeva y, a poco que la mimes, te acompañará media vida. Es conocida también como planta del dinero por simbolizar la buena suerte en la cultura china.", "Planta", "plantadejade.jpeg");
-        this.agregarRegistro(15, "Potus", 5000, "Purifica el aire, eliminando ciertas sustancias tóxicas de sus proximidades. Según el Feng Shui, transforma la energía negativa que se acumula en el ambiente.", "Plantas", "potus.JPG");
-        this.agregarRegistro(16, "Sanseviera", 4900, "Se suele utilizar para purificar el aire. También es una planta recomendada por el Feng Shui para atraer buenas energías a la casa.", "Plantas", "sanseviera.JPG");
-        this.agregarRegistro(17, "Trebol Morado", 2100 , "Responde a la luz y a la oscuridad abriendo y cerrando sus hojas, por lo que muchas personas la consideran mágica o incluso mística. Sólo necesita una macena que drene bien y cerca de alguna ventana.", "Planta", "trebolmorado.jpg");
-        this.agregarRegistro(18, "Tronco de Brasil", 3700, "También conocida como Palo de Agua o Drácena Fragans, se caracteriza por las distintas tonalidades de verde de sus hojas. Necesita temperaturas entre 15 y 25º y luz natural pero no de sol directo.", "Planta", 
-        "troncodebrasil.jpg");
-        this.agregarRegistro(19, "Zamioculcas", 4700, "Eta planta es la solución para quienes no tienen mano con la jardinería. Puede sobrevivir varios meses sin riego, aunque si recibe mucha luz necesitará un riego más frecuente. No tolera el encharcamiento.", "Plantas", "zamioculcas.jpg");
-        this.agregarRegistro(20, "Piedras", 500, "Una de las tantas ventajas de usarlas es que dan soluciones a problemas como humedad. También permiten separar las hojas verdes del sustrato.", "Accesorios", "piedras.jpg");
-        
+        this.productos = []; // Array de productos en carrito.
     }
 
-    agregarRegistro(id, nombre, precio, descripcion, categoria, imagen){
-        const producto = new Producto(id, nombre, precio, descripcion, categoria, imagen);
-        this.productos.push(producto);
-    }
-
-    traerRegistros(){
+    async traerRegistros(){
+        const response = await fetch ("/productosApp.json");
+        this.productos = await response.json();
         return this.productos;
     }
 
@@ -69,9 +42,7 @@ class Carrito{
         } else {
             // Agregalo al carrito
             this.carrito.push({...producto, cantidad: 1});
-            // Cada vez que actualizamos el carrito, lo guardamos en el storage.
-            // Para guardar un array tenemos que usar JSON.
-            // localStorage sólo acepta strings, usando JSON.stringify lo convertimos de array a string y lo guardamos en 'this.carrito'
+            // Cada vez que actualizo el carrito, que lo guarde en el storage.
             localStorage.setItem("carrito", JSON.stringify(this.carrito));
         }
         this.listar();
@@ -83,7 +54,7 @@ class Carrito{
         if (this.carrito[indice].cantidad > 1) {
             this.carrito[indice].cantidad -= 1;
         } else {
-            this.carrito.splice(indice, 1); // Si hay más de 1 unidad resta 1, sino con este método, lo borra del carrito.
+            this.carrito.splice(indice, 1); 
         }
         // Actualizo el carrito en el HTML
         // Guardo en el localStorage aca también porque estamos actualizando el carrito.
@@ -214,7 +185,7 @@ inputBuscar.addEventListener("keyup", (event) => {
 })
 
 // Llamamos a la función
-cargarProductos(baseDatos.traerRegistros());
+baseDatos.traerRegistros().then((productos) => cargarProductos(productos));
 
 // FORMAS DE PAGO
 const btnComprar = document.querySelector("#btnComprar");

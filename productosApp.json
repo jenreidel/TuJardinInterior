@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "nombre": "Aloe Vera",
+        "precio": 2500,
+        "descripcion": "Uno de sus principales beneficios es su capacidad para limpiar el aire de toxinas. Absorben las sustancias nocivas que pueda haber en el ambiente, como por ejemplo el benceno.",
+        "categoria": "Planta",
+        "imagen": "aloevera.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Aspidistra",
+        "precio": 2300,
+        "descripcion": "Perfecta para personas que dicen tener mala mano con las plantas, ya que es considerada una planta todoterreno resistente al frío y al calor. Además, es pet friendly, no es toxica ni en gatos ni en perros.",
+        "categoria": "Planta",
+        "imagen": "aspidistra.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Calathea",
+        "precio": 3900,
+        "descripcion": "Contribuyen a armonizar espacios, relaciones y a estabilizar las emociones. Son plantas resistentes que transmiten energía Yang, perfecta para ubicarla en el living hacia el este (zona de la salud y la familia).",
+        "categoria": "Planta",
+        "imagen": "calathea.jpeg"
+    },
+    {
+        "id": 4,
+        "nombre": "Ceropegia Woodii",
+        "precio": 1800,
+        "descripcion": "Esta suculenta colgante es llamativa por sus hojas en forma de corazón y flores tubulares. Colócala en un espacio luminoso, pero protegida de los rayos de sol directo. Comproba la humedad del sustrato antes de regarla.",
+        "categoria": "Planta",
+        "imagen": "ceropegia-woodii.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Croton",
+        "precio": 3000,
+        "descripcion": "Destaca por sus coloridas hojas y sus multiples propiedades medicinales. Necesita mucha luz pero sin sol directo. Controla que el sustrato esté seco entre riegos y evita encharcar sus raíces.",
+        "categoria": "Planta",
+        "imagen": "croton.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Dieffenbachia",
+        "precio": 5300,
+        "descripcion": "Reduce la cantidad de polvo en el aire y lo purifica. Aumenta la humedad del ambiente. De acuerdo con el Feng Shui, es ideal para lograr los objetivos laborales.",
+        "categoria": "Planta",
+        "imagen": "dieffenbachia.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Espatifilo",
+        "precio": 2800,
+        "descripcion": "También llamada Lirio de la Paz o Cuna de Moisés, es una planta de hojas verdes y flores blancas muy llamativas. Resistente y con pocos cuidados prospera en el interior sin problemas.",
+        "categoria": "Planta",
+        "imagen": "espatifilo.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Ficus Lyrata",
+        "precio": 9200,
+        "descripcion": "También conocido como Ficus Pandurata, crece poco a poco hasta convertirse en ese árbol de interior con el que siempre soñaste. Sus cuidados son prácticamente son nulos, por lo que son muy resistentes.",
+        "categoria": "Planta",
+        "imagen": "ficus-lyrata.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Kalanchoe",
+        "precio": 1200,
+        "descripcion": "Es una planta muy resistente y difícil de matar. Sus flores pueden ser naranjas, rosas, rojas o amarillas. Regala sólo cuando la tierra esté seca y asegurate que reciba mucha luz natural.",
+        "categoria": "Planta",
+        "imagen": "kalanchoe.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Lazo de Amor",
+        "precio": 700,
+        "descripcion": "También conocida como Cinta o Malamadre, necesita luz, pero sin exponerla al sol directo. Es una de las plantas de interior más duraderas y es perfecta para iniciarse en la jardinería.",
+        "categoria": "Planta",
+        "imagen": "lazodeamor.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Maranta Leuconera",
+        "precio": 5900,
+        "descripcion": "Al contrario que otros árboles, no necesita muchísima luz, así que es una opción perfecta para casas donde el sol no sea muy generoso. Según el Feng Shui, esta planta es ideal para atraer el dinero.",
+        "categoria": "Planta",
+        "imagen": "maranta-leuconera.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Pachira Acuática",
+        "precio": 2500,
+        "descripcion": "Uno de sus principales beneficios es su capacidad para limpiar el aire de toxinas. Absorben las sustancias nocivas que pueda haber en el ambiente, como por ejemplo el benceno.",
+        "categoria": "Planta",
+        "imagen": "pachira-acuatica.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "Peperomia",
+        "precio": 2800,
+        "descripcion": "De alto poder ornamental, llenará tu hogar de su singular verdor. Necesita una exposición indirecta al sol y es bastante sensible al frío. Se recomienda comprobar la humedad del sustrato antes de regarla.",
+        "categoria": "Planta",
+        "imagen": "peperomia.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "Planta de Jade",
+        "precio": 3600,
+        "descripcion": "Crece lentamente, pero es muy longeva y, a poco que la mimes, te acompañará media vida. Es conocida también como planta del dinero por simbolizar la buena suerte en la cultura china.",
+        "categoria": "Planta",
+        "imagen": "plantadejade.jpeg"
+    },
+    {
+        "id": 15,
+        "nombre": "Potus",
+        "precio": 5000,
+        "descripcion": "Purifica el aire, eliminando ciertas sustancias tóxicas de sus proximidades. Según el Feng Shui, transforma la energía negativa que se acumula en el ambiente.",
+        "categoria": "Planta",
+        "imagen": "potus.JPG"
+    },
+    {
+        "id": 16,
+        "nombre": "Sanseviera",
+        "precio": 4900,
+        "descripcion": "Se suele utilizar para purificar el aire. También es una planta recomendada por el Feng Shui para atraer buenas energías a la casa.",
+        "categoria": "Planta",
+        "imagen": "sanseviera.JPG"
+    },
+    {
+        "id": 17,
+        "nombre": "Trebol Morado",
+        "precio": 2100,
+        "descripcion": "Responde a la luz y a la oscuridad abriendo y cerrando sus hojas, por lo que muchas personas la consideran mágica o incluso mística. Sólo necesita una macena que drene bien y cerca de alguna ventana.",
+        "categoria": "Planta",
+        "imagen": "trebolmorado.jpg"
+    },
+    {
+        "id": 18,
+        "nombre": "Tronco de Brasil",
+        "precio": 3700,
+        "descripcion": "También conocida como Palo de Agua o Drácena Fragans, se caracteriza por las distintas tonalidades de verde de sus hojas. Necesita temperaturas entre 15 y 25º y luz natural pero no de sol directo.",
+        "categoria": "Planta",
+        "imagen": "troncodebrasil.jpg"
+    },
+    {
+        "id": 19,
+        "nombre": "Zamioculcas",
+        "precio": 4700,
+        "descripcion": "Esta planta es la solución para quienes no tienen mano con la jardinería. Puede sobrevivir varios meses sin riego, aunque si recibe mucha luz necesitará un riego más frecuente. No tolera el encharcamiento.",
+        "categoria": "Planta",
+        "imagen": "zamioculcas.jpg"
+    },
+    {
+        "id": 20,
+        "nombre": "Piedras",
+        "precio": 500,
+        "descripcion": "Una de las tantas ventajas de usarlas es que dan soluciones a problemas como humedad. También permiten separar las hojas verdes del sustrato.",
+        "categoria": "Accesorios",
+        "imagen": "piedras.jpg"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "id": 21,
+        "nombre": "Gift Card 5000",
+        "precio": 5000,
+        "descripcion": "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.",
+        "categoria": "Gift Card"
+    },
+    {
+        "id": 22,
+        "nombre": "Gift Card 10000",
+        "precio": 10000,
+        "descripcion": "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.",
+        "categoria": "Gift Card"
+    },
+    {
+        "id": 23,
+        "nombre": "Gift Card 15000",
+        "precio": 15000,
+        "descripcion": "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.",
+        "categoria": "Gift Card"
+    },
+    {
+        "id": 24,
+        "nombre": "Gift Card 20000",
+        "precio": 20000,
+        "descripcion": "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.",
+        "categoria": "Gift Card"
+    }
+]

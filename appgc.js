@@ -1,20 +1,11 @@
-// Simulación de base de datos. 
 class BaseDeDatos{
     constructor(){
-        this.productos = []; // Array donde guardamos todos los productos en carrito.
-        // Cargamos los productos
-        this.agregarRegistro(5, "Gift Card 5000", 5000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
-        this.agregarRegistro(6, "Gift Card 10000", 10000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift  Card")
-        this.agregarRegistro(7, "Gift Card 15000", 15000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
-        this.agregarRegistro(8, "Gift Card 20000", 20000, "Podés elegir productos que excedan el valor a favor y abonar la diferencia. Si el total es inferior al monto del voucher, la diferencia no será devuelta.", "Gift Card")
+        this.productos = []; // Array de productos en carrito.
     }
 
-    agregarRegistro(id, nombre, precio, descripcion, categoria, imagen = false){
-        const producto = new Producto(id, nombre, precio, descripcion, categoria, imagen);
-        this.productos.push(producto);
-    }
-
-    traerRegistros(){
+    async traerRegistros(){
+        const response = await fetch ("/productosApp.json");
+        this.productos = await response.json();
         return this.productos;
     }
 
@@ -32,7 +23,7 @@ class Carrito{
         this.carrito = carritoStorage || [];
         this.total = 0;
         this.totalProductos = 0;
-        this.listar(); // Que me muestre lo que tengo listado ni bien carga la página con el objeto carrito creado, va a llamar al constructor. El constructor lo trae del storage y lo muestra en mi HTML.
+        this.listar(); // Que me muestre lo que tengo listado ni bien carga la página. Con el objeto carrito creado, va a llamar al constructor. El constructor lo trae del storage y lo muestra en mi HTML.
     }
 
     estaEnCarrito(productoCarrito){
@@ -43,7 +34,7 @@ class Carrito{
         let productoEnCarrito = this.estaEnCarrito(producto);
         if (productoEnCarrito) {
             // Si encuentra uno igual, que me sume la cantidad
-            productoEnCarrito.cantidad += 1;
+            productoEnCarrito.cantidad++;
         } else {
             // Agregalo al carrito
             this.carrito.push({...producto, cantidad: 1});
@@ -127,43 +118,4 @@ const spanTotalCarrito = document.querySelector("#totalCarrito");
 // Creo el objeto carrito. Lo ponemos abajo de todo para que ya todo esté instanciado, listo y vinculado para ser agregado al carrito.
 const carrito = new Carrito();
 
-// FORMAS DE PAGO
 
-function FormaDePago() {
-    let formaPago = prompt("Ingresa la forma de pago:\n\nVISA (3 cuotas sin interés)\nMASTER (3 cuotas con 5% de recargo)\nAMEX (3 cuotas con 10% de recargo)");
-    switch (formaPago) {
-        case "VISA1": 
-            let cuotaV1 = Math.round(precio / 3);
-            let precioFinalV1 = cuotaV1 * 3;
-            alert(`Total: ${precioFinalV1} (3 cuotas sin interés de $${cuotaV1})`);
-            break;
-        case "VISA3": 
-            let cuotaV3 = Math.round(precio / 3);
-            let precioFinalV3 = cuotaV3 * 3;
-            alert(`Total: ${precioFinalV3} (3 cuotas sin interés de $${cuotaV3})`);
-            break;
-        case "MASTER1": 
-            let cuotaM1 = Math.round((precio / 3) * 1.05);
-            let precioFinalM1 = cuotaM1 * 3;
-            alert(`Total: ${precioFinalM1} (3 cuotas sin interés de $${cuotaM1})`);
-            break;
-        case "MASTER3": 
-            let cuotaM3 = Math.round((precio / 3) * 1.05);
-            let precioFinalM3 = cuotaM3 * 3;
-            alert(`Total: ${precioFinalM3} (3 cuotas sin interés de $${cuotaM3})`);
-            break;
-        case "AMEX3": 
-            let cuotaA1 = Math.round((precio / 3) * 1.1);
-            let precioFinalA1 = cuotaA1 * 3;
-            alert(`Total: ${precioFinalA1} (3 cuotas sin interés de $${cuotaA1})`);
-            break;
-        case "AMEX3": 
-            let cuotaA3 = Math.round((precio / 3) * 1.1);
-            let precioFinalA3 = cuotaA3 * 3;
-            alert(`Total: ${precioFinalA3} (3 cuotas sin interés de $${cuotaA3})`);
-            break;
-        default:
-            alert("Por favor ingresá un forma de pago.");
-            break;
-    }
-} 

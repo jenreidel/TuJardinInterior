@@ -8,7 +8,7 @@ selectElement.addEventListener("change", (e) => {e.preventDefault();
             divEnvios.innerHTML = `
                 <div>
                     <h2>Costo de envío: SIN CARGO</h2>
-                    <h5>(Dentro de las 24hs posteriores a la confirmación de pago)</h5>
+                    <h5>(Dentro de las 24hs hábiles posteriores a la confirmación de pago)</h5>
                 </div>
             `;
             break;
@@ -16,7 +16,7 @@ selectElement.addEventListener("change", (e) => {e.preventDefault();
             divEnvios.innerHTML = `
                 <div>
                     <h2>Costo de envío: $1.000.-</h2>
-                    <h5>(Dentro de las 48hs posteriores a la confirmación de pago)</h5>
+                    <h5>(Dentro de las 48hs hábiles posteriores a la confirmación de pago)</h5>
                 </div>
             `;
             break;
@@ -24,7 +24,7 @@ selectElement.addEventListener("change", (e) => {e.preventDefault();
             divEnvios.innerHTML = `
                 <div>
                     <h2>Costo de envío: $1.500.-</h2>
-                    <h5>(Dentro de las 48-72hs posteriores a la confirmación de pago)</h5>
+                    <h5>(Dentro de las 48-72hs hábiles posteriores a la confirmación de pago)</h5>
                 </div>
             `;
             break;
@@ -32,7 +32,7 @@ selectElement.addEventListener("change", (e) => {e.preventDefault();
             divEnvios.innerHTML = `
                 <div>
                     <h2>Costo de envío: $2.000.-</h2>
-                    <h5>(Dentro de las 72hs posteriores a la confirmación de pago)</h5>
+                    <h5>(Dentro de las 72hs hábiles posteriores a la confirmación de pago)</h5>
                 </div>
             `;
             break;
