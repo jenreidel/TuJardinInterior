@@ -136,25 +136,25 @@ function cargarProductos(productos) {
   
     // Crea un contenedor div para las tarjetas, para poder estilar su posicion dentro de él.
     const contenedorTarjetas = document.createElement('div');
-    contenedorTarjetas.classList.add('d-flex', 'flex-row');
+    contenedorTarjetas.classList.add('d-flex', 'flex-row', 'centrar');
   
     for (const producto of productos) {
       // Crea cada tarjeta de producto
-      const tarjeta = `
-        <div class="card" style="width: 18rem;">
-            <img src="img/${producto.imagen}" class="card-img-top" alt="producto a la venta">
-            <div class="card-body">
-                <h4 class="card-title">${producto.nombre}</h4>
-                <p class="card-text">${producto.descripcion}</p>
-                <h5>Precio $${producto.precio}</h5>
-                <div class="centrar">
-                    <button class="btnAgregar" data-id="${producto.id}">Agregar al Carrito</button>
+        const tarjeta = `
+            <div class="card" style="width: 18rem;">
+                <img src="img/${producto.imagen}" class="card-img-top" alt="producto a la venta">
+                <div class="card-body">
+                    <h4 class="card-title">${producto.nombre}</h4>
+                    <p class="card-text">${producto.descripcion}</p>
+                    <h5>Precio $${producto.precio}</h5>
+                    <div class="centrar">
+                        <button class="btnAgregar" data-id="${producto.id}">Agregar al Carrito</button>
+                    </div>
                 </div>
             </div>
-        </div>
-      `;
-      // Agrega cada tarjeta al contenedor de tarjetas
-      contenedorTarjetas.innerHTML += tarjeta;
+        `;
+        // Agrega cada tarjeta al contenedor de tarjetas
+        contenedorTarjetas.innerHTML += tarjeta;
     }
   
     // Agrega el contenedor de tarjetas al contenedor principal

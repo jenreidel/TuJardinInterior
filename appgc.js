@@ -4,7 +4,7 @@ class BaseDeDatos{
     }
 
     async traerRegistros(){
-        const response = await fetch ("/productosApp.json");
+        const response = await fetch ("/productosAppgc.json");
         this.productos = await response.json();
         return this.productos;
     }
@@ -105,7 +105,7 @@ class Producto{
 }
 
 // Instanciamos el Objeto Base de Datos
-const baseDatos = new BaseDeDatos();
+baseDatos.traerRegistros().then((productos) => cargarProductos(productos));
 
 // Elementos
 const divProductos = document.querySelector("#productos");

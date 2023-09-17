@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
 body {
     background-image: url(../img/depositphoto-16.jpg);
@@ -159,6 +160,10 @@ footer{
     flex-direction: column;
     align-items: center;
 }
+.div-small {
+    max-width: 800px;
+    margin: 0 auto; 
+}
 .form-small {
     max-width: 550px;
     margin: 0 auto;
@@ -166,6 +171,7 @@ footer{
 .centrar {
     display: block;
     margin: 0 auto;
+    justify-content: center;
 }
 .divtxt {
     max-width: 1000px;
